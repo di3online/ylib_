@@ -1,0 +1,86 @@
+=pod
+
+Ylib is a collection of small and mostly independent C libraries.
+
+=head2 Libraries
+
+=over
+
+=item B<dbusev> (L<dbusev.h|http://g.blicky.net/ylib.git/plain/dbusev.h> and L<dbusev.c|http://g.blicky.net/ylib.git/plain/dbusev.c>)
+
+Register a DBusConnection (libdbus-1) with libev.
+
+=item B<ecbuf> (L<ecbuf.h|http://g.blicky.net/ylib.git/plain/ecbuf.h>)
+
+An automatically expanding type-safe generic circular buffer.
+
+=item B<evtp> (L<evtp.h|http://g.blicky.net/ylib.git/plain/evtp.h> and L<evtp.c|http://g.blicky.net/ylib.git/plain/evtp.c>)
+
+A convenient thread pool for libev.
+
+=item B<sqlasync> (L<sqlasync.h|http://g.blicky.net/ylib.git/plain/sqlasync.h> and L<sqlasync.c|http://g.blicky.net/ylib.git/plain/sqlasync.c>)
+
+Asynchronous wrappers for working with SQLite3 databases.
+
+=item B<ylog> (L<ylog.h|http://g.blicky.net/ylib.git/plain/ylog.h> and L<ylog.c|http://g.blicky.net/ylib.git/plain/ylog.c>)
+
+A low-level logging system for C.
+
+=item B<yopt> (L<yopt.h|http://g.blicky.net/ylib.git/plain/yopt.h>)
+
+A portable and minimal C<getopt_long()> replacement.
+
+=item B<yuri> (L<yuri.h|http://g.blicky.net/ylib.git/plain/yuri.h> and L<yuri.c|http://g.blicky.net/ylib.git/plain/yuri.c>)
+
+A minimal URI validation and parsing library.
+
+=back
+
+Documentation for each library can be found in the .h files. To use a library,
+simply copy the .h and .c file (if any) into your project.
+
+These libraries are maintained in git and can be cloned with
+C<git clone git://g.blicky.net/ylib.git>. The repo is also available for L<online browsing|http://g.blicky.net/ylib.git>.
+
+If you use any of the above libraries, it is advised to occasionally check the
+repository for updates. Subscribing to
+L<its Atom feed|http://g.blicky.net/ylib.git/atom/> is recommended.
+
+=head2 Overview
+
+All of these libraries are written with the goal of being small, efficient and
+portable.
+
+In this context, 'small' refers to the code size -- it is easier to understand
+and integrate a small library than it is to use a larger one.
+
+'Efficient' refers to having a low memory and computational overhead, where
+that makes sense. That usually manifests itself in avoiding excessive use of
+dynamic memory (malloc()/realloc()/free()) and system calls.
+
+My idea of 'portable' is somewhat along the lines of "it should work on any 5+
+years old UNIX-like system". In practice this may not always be true due to the
+lack of rigorous testing, but I very much appreciate patches that help reach
+this goal. Note that I do not consider native Windows/MSVC part of this
+equation.  Some libraries may work on Windows, others certainly won't.
+Similarly, these are all C libraries, a C++ compiler may not necessarily like
+them. Patches to improve Windows or C++ support are welcome, as long as the
+modifications are not very involved.
+
+=head2 Relevant links
+
+Ylib likely won't have everything you need. Here are a few other excellent
+libraries and library collections. This list is definitely not complete, feel
+free to contact me if you have more relevant projects to be listed here.
+
+=over
+
+=item * L<Klib|https://github.com/attractivechaos/klib> - Generic and efficient data structures.
+
+=item * L<CCAN|http://ccodearchive.net/> - Comprehensive C Archive Network. Need I say more? :)
+
+=item * L<libev|http://software.schmorp.de/pkg/libev.html> - An excellent high-performance event loop.
+
+=item * L<Juliusz' threadpool|https://github.com/jech/threadpool> - A simple thread pool.
+
+=back
